@@ -95,18 +95,13 @@ h3 {
 <script>
 
 function submitted() {
-	// TODO: update +/- for new questions in the trait computations
-	let openness = document.getElementById('openness1').value - document.getElementById('openness2').value + document.getElementById('openness3').value + document.getElementById('openness4').value + document.getElementById('openness5').value;
-	let conscientiousness = document.getElementById('conscientiousness1').value - document.getElementById('conscientiousness2').value - document.getElementById('conscientiousness3').value + document.getElementById('conscientiousness4').value + document.getElementById('conscientiousness5').value;
-	let extraversion = document.getElementById('extraversion1').value + document.getElementById('extraversion2').value + document.getElementById('extraversion3').value + document.getElementById('extraversion4').value + document.getElementById('extraversion5').value;
-	let agreeableness = - document.getElementById('agreeableness1').value + document.getElementById('agreeableness2').value + document.getElementById('agreeableness3').value + document.getElementById('agreeableness4').value + document.getElementById('agreeableness5').value;
-	let neuroticism = document.getElementById('neuroticism1').value + document.getElementById('neuroticism2').value - document.getElementById('neuroticism3').value + document.getElementById('neuroticism4').value - document.getElementById('neuroticism5').value;
-	console.log(openness);
-	console.log(conscientiousness);
-	console.log(extraversion);
-	console.log(agreeableness);
-	console.log(neuroticism);
-	//window.location = window.location.toString().substring(0, window.location.length - 20) + "Results.html?o=" + openness + "&c=" + conscientiousness + "&e=" + extraversion + "&a=" + agreeableness + "&n=" + neuroticism;
+	// TODO: update +/- for new questions in the trait computations, and change constant to reflect how many negatives there are
+	let openness = 100 + Number(document.getElementById('openness1').value) - Number(document.getElementById('openness2').value) + Number(document.getElementById('openness3').value) + Number(document.getElementById('openness4').value) + Number(document.getElementById('openness5').value);
+	let conscientiousness = 200 + Number(document.getElementById('conscientiousness1').value) - Number(document.getElementById('conscientiousness2').value) - Number(document.getElementById('conscientiousness3').value) + Number(document.getElementById('conscientiousness4').value) + Number(document.getElementById('conscientiousness5').value);
+	let extraversion = 0 + Number(document.getElementById('extraversion1').value) + Number(document.getElementById('extraversion2').value) + Number(document.getElementById('extraversion3').value) + Number(document.getElementById('extraversion4').value) + Number(document.getElementById('extraversion5').value);
+	let agreeableness = 100 - Number(document.getElementById('agreeableness1').value) + Number(document.getElementById('agreeableness2').value) + Number(document.getElementById('agreeableness3').value) + Number(document.getElementById('agreeableness4').value) + Number(document.getElementById('agreeableness5').value);
+	let neuroticism = 200 + Number(document.getElementById('neuroticism1').value) + Number(document.getElementById('neuroticism2').value) - Number(document.getElementById('neuroticism3').value) + Number(document.getElementById('neuroticism4').value) - Number(document.getElementById('neuroticism5').value);
+	window.location = window.location.toString().substring(0, window.location.length - 20) + "Results.html?o=" + openness + "&c=" + conscientiousness + "&e=" + extraversion + "&a=" + agreeableness + "&n=" + neuroticism;
 }
 
 </script>
