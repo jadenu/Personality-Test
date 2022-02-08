@@ -9,6 +9,7 @@ h1 {
 	text-align: center;
 	font-family: "Times New Roman", Times, serif;
 	text-shadow: 2px 2px #aaaaaa;
+	font-size: 50px;
 }
 h2 {
 	text-align: center;
@@ -28,35 +29,59 @@ h4 {
 	padding: 10px;
 	margin: 0px;
 }
+
 #frameDiv {
 	background-color: white;
-	border: 20px solid #368EFF;
+	border: 10px solid #368EFF;
 	padding: 20px;
 }
 #absoluteDiv {
 	position: absolute;
-	top: 10px;
-	right: 10px;
+	top: 20px;
+	right: 20px;
 	width: 250px;
 	height: 50px;
 	border: 10px solid #368EFF;
 	padding: 0px;
 	margin: 0px;
+	border-radius:5px;
 }
 
 .button {
 	text-align: center;
-	padding: 15px 32px;
+	padding: 20px;
 	font-size: 16px;
 	color: black;
 	cursor: pointer;
 	background-color: #368EFF;
 	opacity: 1;
-	-webkit-transitionL .2s;
-	transition: opacity .2s;
+	border-radius: 5px;
+	-webkit-transitionL .5s;
+	transition: opacity .5s;
+	width: 200px;
 }
 .button:hover {
 	opacity: 0.7;
+}
+.button span {
+	cursor: pointer;
+	position: relative;
+	display: inline-block;
+	transition: 0.5s;
+}
+.button span:after {
+	content: '\00bb';
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+.button:hover span {
+	padding-right: 25px;
+}
+.button:hover span:after {
+	opacity: 1;
+	right: 0;
 }
 
 .range {
@@ -172,13 +197,12 @@ h4 {
 <h3> You are seldom stressed out. </h3>
 <input class="range" type="range" id="neuroticism5" name="How much do you agree?" min="0" max="100" value="50">
 <br><br>
-<button class="button" onclick="submitted()">Submit</button>
+<button class="button" onclick="submitted()" type="submit"><span> Submit </span></button>
 </div>
 </body>
 <script>
 
 function submitted() {
-	// TODO: update +/- for new questions in the trait computations, and change constant to reflect how many negatives there are
 	let openness = 200 + Number(document.getElementById('openness1').value) - Number(document.getElementById('openness2').value) + Number(document.getElementById('openness3').value) - Number(document.getElementById('openness4').value) + Number(document.getElementById('openness5').value);
 	let conscientiousness = 200 + Number(document.getElementById('conscientiousness1').value) - Number(document.getElementById('conscientiousness2').value) - Number(document.getElementById('conscientiousness3').value) + Number(document.getElementById('conscientiousness4').value) + Number(document.getElementById('conscientiousness5').value);
 	let extraversion = 200 + Number(document.getElementById('extraversion1').value) + Number(document.getElementById('extraversion2').value) + Number(document.getElementById('extraversion3').value) - Number(document.getElementById('extraversion4').value) - Number(document.getElementById('extraversion5').value);
