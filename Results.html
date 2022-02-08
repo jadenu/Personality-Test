@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<style>
+head {background-color: lightgray;}
+h1 {
+	color: black;
+	text-align: center;
+}
+h3 {
+	font-size: 20px;
+}
+</style>
+<head>
+<h1> Personality Test! </h1>
+</head>
+<body>
+<h4 id="one"></h4>
+<h4 id="two"></h4>
+<h4 id="three"></h4>
+<h4 id="four"></h4>
+</body>
+<script>
+
+setValues();
+
+function setValues() {
+	const urlParams = new URLSearchParams(window.location.search);
+	const ans1 = urlParams.get('ans1');
+	const ans2 = urlParams.get('ans2');
+	const ans3 = urlParams.get('ans3');
+	const ans4 = urlParams.get('ans4');
+	document.getElementById("one").innerHTML = "Your answer to q1 was " + ans1;
+	document.getElementById("two").innerHTML = "Your answer to q2 was " + ans2;
+	document.getElementById("three").innerHTML = "Your answer to q3 was " + ans3;
+	document.getElementById("four").innerHTML = "Your answer to q4 was " + ans4;
+}
+
+</script>
+</html>
