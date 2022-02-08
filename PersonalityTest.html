@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+head {background-color: lightgray;}
+h1 {
+	color: black;
+	text-align: center;
+}
+h3 {
+	font-size: 20px;
+}
+</style>
+<h1> Personality Test! </h1>
+<h4> For each statement, drag the slider from the left to the right in accordance to how much you agree with the statement, where all the way left is 'strongly disagree' and all the way right is 'strongly agree'. When you're done, press 'submit'.</h4>
+</head>
+<body>
+<h3> How much do you agree with this question? </h3>
+<input type="range" id="slider1" name="agreeance1" min="0" max="100" value="50">
+<br><br>
+<h3> How much do you agree with this question? </h3>
+<input type="range" id="slider2" name="agreeance2" min="0" max="100" value="50">
+<br><br>
+<h3> How much do you agree with this question? </h3>
+<input type="range" id="slider3" name="agreeance3" min="0" max="100" value="50">
+<br><br>
+<h3> How much do you agree with this question? </h3>
+<input type="range" id="slider4" name="agreeance4" min="0" max="100" value="50">
+<br><br>
+<input type="button" value="Submit" onclick="submitted()">
+</body>
+<script>
+
+function submitted() {
+	console.log("Value 1: " + document.getElementById('slider1').value);
+}
+
+</script>
+</html>
