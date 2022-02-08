@@ -45,7 +45,7 @@ h3 {
 <h3> You are easily irritated. </h3>
 <input type="range" id="neuroticism2" name="How much do you agree?" min="0" max="100" value="50">
 <br><br>
-<h3> Openness prompt 3. </h3>
+<h3> You tend to think outside the box. </h3>
 <input type="range" id="openness3" name="How much do you agree?" min="0" max="100" value="50">
 <br><br>
 <h3> You tend to procrastinate. </h3>
@@ -54,37 +54,37 @@ h3 {
 <h3> You feel comfortable asking questions. </h3>
 <input type="range" id="extraversion3" name="How much do you agree?" min="0" max="100" value="50">
 <br><br>
-<h3> Agreeableness prompt 3. </h3>
+<h3> You are an empathetic person. </h3>
 <input type="range" id="agreeableness3" name="How much do you agree?" min="0" max="100" value="50">
 <br><br>
 <h3> You are happy most of the time. </h3>
 <input type="range" id="neuroticism3" name="How much do you agree?" min="0" max="100" value="50">
 <br><br>
-<h3> Openness prompt 4. </h3>
+<h3> You think art is a waste of time. </h3>
 <input type="range" id="openness4" name="How much do you agree?" min="0" max="100" value="50">
 <br><br>
-<h3> Conscientiousness prompt 4. </h3>
+<h3> You like to make lists. </h3>
 <input type="range" id="conscientiousness4" name="How much do you agree?" min="0" max="100" value="50">
 <br><br>
-<h3> Extraversion prompt 4. </h3>
+<h3> You feel shy initiating conversation with new people. </h3>
 <input type="range" id="extraversion4" name="How much do you agree?" min="0" max="100" value="50">
 <br><br>
-<h3> Agreeableness prompt 4. </h3>
+<h3> You are an optimist. </h3>
 <input type="range" id="agreeableness4" name="How much do you agree?" min="0" max="100" value="50">
 <br><br>
 <h3> You are often reminded of embarrassing moments from your past. </h3>
 <input type="range" id="neuroticism4" name="How much do you agree?" min="0" max="100" value="50">
 <br><br>
-<h3> Openness prompt 5. </h3>
+<h3> You are a creative person. </h3>
 <input type="range" id="openness5" name="How much do you agree?" min="0" max="100" value="50">
 <br><br>
-<h3> Conscientiousness prompt 5. </h3>
+<h3> You always keep your promises. </h3>
 <input type="range" id="conscientiousness5" name="How much do you agree?" min="0" max="100" value="50">
 <br><br>
-<h3> Extraversion prompt 5. </h3>
+<h3> You rarely make new friends. </h3>
 <input type="range" id="extraversion5" name="How much do you agree?" min="0" max="100" value="50">
 <br><br>
-<h3> Agreeableness prompt 5. </h3>
+<h3> You are a contrarian. </h3>
 <input type="range" id="agreeableness5" name="How much do you agree?" min="0" max="100" value="50">
 <br><br>
 <h3> You are seldom stressed out. </h3>
@@ -96,10 +96,10 @@ h3 {
 
 function submitted() {
 	// TODO: update +/- for new questions in the trait computations, and change constant to reflect how many negatives there are
-	let openness = 100 + Number(document.getElementById('openness1').value) - Number(document.getElementById('openness2').value) + Number(document.getElementById('openness3').value) + Number(document.getElementById('openness4').value) + Number(document.getElementById('openness5').value);
+	let openness = 200 + Number(document.getElementById('openness1').value) - Number(document.getElementById('openness2').value) + Number(document.getElementById('openness3').value) - Number(document.getElementById('openness4').value) + Number(document.getElementById('openness5').value);
 	let conscientiousness = 200 + Number(document.getElementById('conscientiousness1').value) - Number(document.getElementById('conscientiousness2').value) - Number(document.getElementById('conscientiousness3').value) + Number(document.getElementById('conscientiousness4').value) + Number(document.getElementById('conscientiousness5').value);
-	let extraversion = 0 + Number(document.getElementById('extraversion1').value) + Number(document.getElementById('extraversion2').value) + Number(document.getElementById('extraversion3').value) + Number(document.getElementById('extraversion4').value) + Number(document.getElementById('extraversion5').value);
-	let agreeableness = 100 - Number(document.getElementById('agreeableness1').value) + Number(document.getElementById('agreeableness2').value) + Number(document.getElementById('agreeableness3').value) + Number(document.getElementById('agreeableness4').value) + Number(document.getElementById('agreeableness5').value);
+	let extraversion = 200 + Number(document.getElementById('extraversion1').value) + Number(document.getElementById('extraversion2').value) + Number(document.getElementById('extraversion3').value) - Number(document.getElementById('extraversion4').value) - Number(document.getElementById('extraversion5').value);
+	let agreeableness = 200 - Number(document.getElementById('agreeableness1').value) + Number(document.getElementById('agreeableness2').value) + Number(document.getElementById('agreeableness3').value) + Number(document.getElementById('agreeableness4').value) - Number(document.getElementById('agreeableness5').value);
 	let neuroticism = 200 + Number(document.getElementById('neuroticism1').value) + Number(document.getElementById('neuroticism2').value) - Number(document.getElementById('neuroticism3').value) + Number(document.getElementById('neuroticism4').value) - Number(document.getElementById('neuroticism5').value);
 	window.location = window.location.toString().substring(0, window.location.length - 20) + "Results.html?o=" + openness + "&c=" + conscientiousness + "&e=" + extraversion + "&a=" + agreeableness + "&n=" + neuroticism;
 }
