@@ -1,215 +1,289 @@
 <!DOCTYPE html>
 <html>
-<style>
-body {
-	margin: 0px;
-}
-h1 {
-	color: black;
-	text-align: center;
-	font-family: "Times New Roman", Times, serif;
-	text-shadow: 2px 2px #aaaaaa;
-	font-size: 50px;
-}
-h2 {
-	text-align: center;
-	font-size: 20px;
-}
-h3 {
-	font-size: 20px;
-}
-h4 {
-	text-align: center;
-	font-size: 18px;
-}
-#headerDiv {
-	width: 100%;
-	background-color: lightgray;
-	border-bottom: 10px solid darkgray;
-	padding: 10px;
-	margin: 0px;
-}
+	<style>
+		body {
+			margin: 0px;
+		}
+		h1 {
+			color: black;
+			text-align: center;
+			font-family: "Times New Roman", Times, serif;
+			text-shadow: 2px 2px #aaaaaa;
+			font-size: 50px;
+		}
+		h2 {
+			text-align: center;
+			font-size: 20px;
+		}
+		h3 {
+			font-size: 20px;
+		}
+		h4 {
+			text-align: center;
+			font-size: 18px;
+		}
+		hr {
+			color: #D3D3D3;
+			width: 20%;
+		}
+		#headerDiv {
+			width: 100%;
+			background-color: lightgray;
+			border-bottom: 10px solid darkgray;
+			padding: 10px;
+			margin: 0px;
+		}
 
-#frameDiv {
-	background-color: white;
-	border: 10px solid #368EFF;
-	padding: 20px;
-}
-#absoluteDiv {
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	width: 250px;
-	height: 50px;
-	border: 10px solid #368EFF;
-	padding: 0px;
-	margin: 0px;
-	border-radius:5px;
-}
+		#frameDiv {
+			background-color: white;
+			border: 10px solid #368EFF;
+			padding: 20px;
+		}
+		#absoluteDiv {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			width: 250px;
+			height: 50px;
+			border: 10px solid #368EFF;
+			padding: 0px;
+			margin: 0px;
+			border-radius: 5px;
+		}
+		#howDoesItWorkDiv {
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			padding: 0px;
+			margin: 0px;
+			height: 50px;
+		}
 
-.button {
-	text-align: center;
-	padding: 20px;
-	font-size: 16px;
-	color: black;
-	cursor: pointer;
-	background-color: #368EFF;
-	opacity: 1;
-	border-radius: 5px;
-	-webkit-transitionL .5s;
-	transition: opacity .5s;
-	width: 200px;
-}
-.button:hover {
-	opacity: 0.7;
-}
-.button span {
-	cursor: pointer;
-	position: relative;
-	display: inline-block;
-	transition: 0.5s;
-}
-.button span:after {
-	content: '\00bb';
-	opacity: 0;
-	top: 0;
-	right: -20px;
-	transition: 0.5s;
-}
-.button:hover span {
-	padding-right: 25px;
-}
-.button:hover span:after {
-	opacity: 1;
-	right: 0;
-}
+		.button {
+			text-align: center;
+			padding: 20px;
+			font-size: 16px;
+			color: black;
+			cursor: pointer;
+			background-color: #368EFF;
+			opacity: 1;
+			border-radius: 5px;
+			-webkit-transition: .5s;
+			transition: opacity .5s;
+			width: 220px;
+		}
+		.button:hover {
+			opacity: 0.7;
+		}
+		.button span {
+			cursor: pointer;
+			position: relative;
+			display: inline-block;
+			transition: .5s;
+			-webkit-transition: .5s;
+		}
+		.button span:after {
+			content: '\00bb';
+			opacity: 0;
+			top: 0;
+			right: -20px;
+			transition: .5s;
+			-webkit-transition: .5s;
+		}
+		.button:hover span {
+			padding-right: 25px;
+		}
+		.button:hover span:after {
+			opacity: 1;
+			right: 0;
+		}
 
-.range {
-	-webkit-appearance: none;
-	appearance: none;
-	width: 30%;
-	height: 25px;
-	background: #D3D3D3;
-	outline: none;
-	opacity: 0.7;
-	-webkit-transition: .2s;
-	transition: opacity .2s;
-}
-.range:hover {
-	opacity: 1;
-}
-.range::-webkit-slider-thumb {
-	-webkit-appearance: none;
-	appearance: none;
-	width: 25px;
-	height: 25px;
-	background: #368EFF;
-	cursor: pointer;
-}
-.range::-moz-range-thumb {
-	width: 25px;
-	height: 25px;
-	background: #368EFF;
-	cursor: pointer;
-}
-</style>
-<body>
-<div id="headerDiv">
-<h1> Personality Test! </h1>
-<h4> For each statement, drag the slider from the left to the right in accordance with how much you agree with the statement, where all the way left is 'strongly disagree' and all the way right is 'strongly agree'.<br>When you're done, press 'submit'.</h4>
-</div>
-<div id="absoluteDiv">
-<h2> Made by Jaden and Reed </h2>
-</div>
-<div id="frameDiv">
-<h3> You enjoy meeting new people. </h3>
-<input class="range" type="range" id="openness1" name="How much do you agree?" min="0" max="100" value="50" >
-<br><br>
-<h3> You like to set goals for yourself and follow through on them. </h3>
-<input class="range" type="range" id="conscientiousness1" name="How much do you agree?" min="0" max="100" value="50">
-<br><br>
-<h3> You prefer to work in groups rather than by yourself. </h3>
-<input class="range" type="range" id="extraversion1" name="How much do you agree?" min="0" max="100" value="50">
-<br><br>
-<h3> You tend to pursue your own ideas rather than those of others. </h3>
-<input class="range" type="range" id="agreeableness1" name="How much do you agree?" min="0" max="100" value="50">
-<br><br>
-<h3> You often think about bad things happening to you. </h3>
-<input class="range" type="range" id="neuroticism1" name="How much do you agree?" min="0" max="100" value="50">
-<br><br>
-<h3> You prefer to do things you already know, rather than trying new things. </h3>
-<input class="range" type="range" id="openness2" name="How much do you agree?" min="0" max="100" value="50">
-<br><br>
-<h3> You would rather get the job done quickly than ensure that you have done it properly. </h3>
-<input class="range" type="range" id="conscientiousness2" name="How much do you agree?" min="0" max="100" value="50">
-<br><br>
-<h3> You tend to enjoy parties and social gatherings. </h3>
-<input class="range" type="range" id="extraversion2" name="How much do you agree?" min="0" max="100" value="50">
-<br><br>
-<h3> People enjoy spending time with you. </h3>
-<input class="range" type="range" id="agreeableness2" name="How much do you agree?" min="0" max="100" value="50">
-<br><br>
-<h3> You are easily irritated. </h3>
-<input class="range" type="range" id="neuroticism2" name="How much do you agree?" min="0" max="100" value="50">
-<br><br>
-<h3> You tend to think outside the box. </h3>
-<input class="range" type="range" id="openness3" name="How much do you agree?" min="0" max="100" value="50">
-<br><br>
-<h3> You tend to procrastinate. </h3>
-<input class="range" type="range" id="conscientiousness3" name="How much do you agree?" min="0" max="100" value="50">
-<br><br>
-<h3> You feel comfortable asking questions. </h3>
-<input class="range" type="range" id="extraversion3" name="How much do you agree?" min="0" max="100" value="50">
-<br><br>
-<h3> You are an empathetic person. </h3>
-<input class="range" type="range" id="agreeableness3" name="How much do you agree?" min="0" max="100" value="50">
-<br><br>
-<h3> You are happy most of the time. </h3>
-<input class="range" type="range" id="neuroticism3" name="How much do you agree?" min="0" max="100" value="50">
-<br><br>
-<h3> You think art is a waste of time. </h3>
-<input class="range" type="range" id="openness4" name="How much do you agree?" min="0" max="100" value="50">
-<br><br>
-<h3> You like to make lists. </h3>
-<input class="range" type="range" id="conscientiousness4" name="How much do you agree?" min="0" max="100" value="50">
-<br><br>
-<h3> You feel shy initiating conversation with new people. </h3>
-<input class="range" type="range" id="extraversion4" name="How much do you agree?" min="0" max="100" value="50">
-<br><br>
-<h3> You are an optimist. </h3>
-<input class="range" type="range" id="agreeableness4" name="How much do you agree?" min="0" max="100" value="50">
-<br><br>
-<h3> You are often reminded of embarrassing moments from your past. </h3>
-<input class="range" type="range" id="neuroticism4" name="How much do you agree?" min="0" max="100" value="50">
-<br><br>
-<h3> You are a creative person. </h3>
-<input class="range" type="range" id="openness5" name="How much do you agree?" min="0" max="100" value="50">
-<br><br>
-<h3> You always keep your promises. </h3>
-<input class="range" type="range" id="conscientiousness5" name="How much do you agree?" min="0" max="100" value="50">
-<br><br>
-<h3> You rarely make new friends. </h3>
-<input class="range" type="range" id="extraversion5" name="How much do you agree?" min="0" max="100" value="50">
-<br><br>
-<h3> You are a contrarian. </h3>
-<input class="range" type="range" id="agreeableness5" name="How much do you agree?" min="0" max="100" value="50">
-<br><br>
-<h3> You are seldom stressed out. </h3>
-<input class="range" type="range" id="neuroticism5" name="How much do you agree?" min="0" max="100" value="50">
-<br><br>
-<button class="button" onclick="submitted()" type="submit"><span> Submit </span></button>
-</div>
-</body>
-<script>
+		.range {
+			-webkit-appearance: none;
+			appearance: none;
+			width: 30%;
+			height: 25px;
+			background: #D3D3D3;
+			outline: none;
+			opacity: 0.7;
+			-webkit-transition: .2s;
+			transition: opacity .2s;
+		}
+		.range:hover {
+			opacity: 1;
+		}
+		.range::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			appearance: none;
+			width: 25px;
+			height: 25px;
+			background: #368EFF;
+			cursor: pointer;
+		}
+		.range::-moz-range-thumb {
+			width: 25px;
+			height: 25px;
+			background: #368EFF;
+			cursor: pointer;
+		}
+	</style>
+	<body>
+		<div id="headerDiv">
+			<h1> Personality Test! </h1>
+			<h4> For each statement, drag the slider from the left to the right in accordance with how much you agree with the statement, where all the way left is 'strongly disagree' and all the way right is 'strongly agree'.<br>When you're done, press 'submit'.</h4>
+			</div>
+			<div id="howDoesItWorkDiv">
+				<button class="button" onclick="howWork()" type="submit">
+					<span> How does it work? </span>
+				</button>
+			</div>
+			<div id="absoluteDiv">
+				<h2> Made by Jaden and Reed </h2>
+			</div>
+			<div id="frameDiv">
+				<h3> You enjoy meeting new people. </h3>
+				<input class="range" type="range" id="openness1" name="How much do you agree?" min="0" max="100" value="50"/>
+				<br/>
+				<br/>
+				<hr align="left"/>
+				<h3> You like to set goals for yourself and follow through on them. </h3>
+				<input class="range" type="range" id="conscientiousness1" name="How much do you agree?" min="0" max="100" value="50"/>
+				<br/>
+				<br/>
+				<hr align="left"/>
+				<h3> You prefer to work in groups rather than by yourself. </h3>
+				<input class="range" type="range" id="extraversion1" name="How much do you agree?" min="0" max="100" value="50"/>
+				<br/>
+				<br/>
+				<hr align="left"/>
+				<h3> You tend to pursue your own ideas rather than those of others. </h3>
+				<input class="range" type="range" id="agreeableness1" name="How much do you agree?" min="0" max="100" value="50"/>
+				<br/>
+				<br/>
+				<hr align="left"/>
+				<h3> You often think about bad things happening to you. </h3>
+				<input class="range" type="range" id="neuroticism1" name="How much do you agree?" min="0" max="100" value="50"/>
+				<br/>
+				<br/>
+				<hr align="left"/>
+				<h3> You prefer to do things you already know, rather than trying new things. </h3>
+				<input class="range" type="range" id="openness2" name="How much do you agree?" min="0" max="100" value="50"/>
+				<br/>
+				<br/>
+				<hr align="left"/>
+				<h3> You would rather get the job done quickly than ensure that you have done it properly. </h3>
+				<input class="range" type="range" id="conscientiousness2" name="How much do you agree?" min="0" max="100" value="50"/>
+				<br/>
+				<br/>
+				<hr align="left"/>
+				<h3> You tend to enjoy parties and social gatherings. </h3>
+				<input class="range" type="range" id="extraversion2" name="How much do you agree?" min="0" max="100" value="50"/>
+				<br/>
+				<br/>
+				<hr align="left"/>
+				<h3> People enjoy spending time with you. </h3>
+				<input class="range" type="range" id="agreeableness2" name="How much do you agree?" min="0" max="100" value="50"/>
+				<br/>
+				<br/>
+				<hr align="left"/>
+				<h3> You are easily irritated. </h3>
+				<input class="range" type="range" id="neuroticism2" name="How much do you agree?" min="0" max="100" value="50"/>
+				<br/>
+				<br/>
+				<hr align="left"/>
+				<h3> You tend to think outside the box. </h3>
+				<input class="range" type="range" id="openness3" name="How much do you agree?" min="0" max="100" value="50"/>
+				<br/>
+				<br/>
+				<hr align="left"/>
+				<h3> You tend to procrastinate. </h3>
+				<input class="range" type="range" id="conscientiousness3" name="How much do you agree?" min="0" max="100" value="50"/>
+				<br/>
+				<br/>
+				<hr align="left"/>
+				<h3> You feel comfortable asking questions. </h3>
+				<input class="range" type="range" id="extraversion3" name="How much do you agree?" min="0" max="100" value="50"/>
+				<br/>
+				<br/>
+				<hr align="left"/>
+				<h3> You are an empathetic person. </h3>
+				<input class="range" type="range" id="agreeableness3" name="How much do you agree?" min="0" max="100" value="50"/>
+				<br/>
+				<br/>
+				<hr align="left"/>
+				<h3> You are happy most of the time. </h3>
+				<input class="range" type="range" id="neuroticism3" name="How much do you agree?" min="0" max="100" value="50"/>
+				<br/>
+				<br/>
+				<hr align="left"/>
+				<h3> You think art is a waste of time. </h3>
+				<input class="range" type="range" id="openness4" name="How much do you agree?" min="0" max="100" value="50"/>
+				<br/>
+				<br/>
+				<hr align="left"/>
+				<h3> You like to make lists. </h3>
+				<input class="range" type="range" id="conscientiousness4" name="How much do you agree?" min="0" max="100" value="50"/>
+				<br/>
+				<br/>
+				<hr align="left"/>
+				<h3> You feel shy initiating conversation with new people. </h3>
+				<input class="range" type="range" id="extraversion4" name="How much do you agree?" min="0" max="100" value="50"/>
+				<br/>
+				<br/>
+				<hr align="left"/>
+				<h3> You are an optimist. </h3>
+				<input class="range" type="range" id="agreeableness4" name="How much do you agree?" min="0" max="100" value="50"/>
+				<br/>
+				<br/>
+				<hr align="left"/>
+				<h3> You are often reminded of embarrassing moments from your past. </h3>
+				<input class="range" type="range" id="neuroticism4" name="How much do you agree?" min="0" max="100" value="50"/>
+				<br/>
+				<br/>
+				<hr align="left"/>
+				<h3> You are a creative person. </h3>
+				<input class="range" type="range" id="openness5" name="How much do you agree?" min="0" max="100" value="50"/>
+				<br/>
+				<br/>
+				<hr align="left"/>
+				<h3> You always keep your promises. </h3>
+				<input class="range" type="range" id="conscientiousness5" name="How much do you agree?" min="0" max="100" value="50"/>
+				<br/>
+				<br/>
+				<hr align="left"/>
+				<h3> You rarely make new friends. </h3>
+				<input class="range" type="range" id="extraversion5" name="How much do you agree?" min="0" max="100" value="50"/>
+				<br/>
+				<br/>
+				<hr align="left"/>
+				<h3> You are a contrarian. </h3>
+				<input class="range" type="range" id="agreeableness5" name="How much do you agree?" min="0" max="100" value="50"/>
+				<br/>
+				<br/>
+				<hr align="left"/>
+				<h3> You are seldom stressed out. </h3>
+				<input class="range" type="range" id="neuroticism5" name="How much do you agree?" min="0" max="100" value="50"/>
+				<br/>
+				<br/>
+				<button class="button" onclick="submitted()" type="submit">
+					<span> Submit </span>
+				</button>
+			</div>
+		</div>
+	</body>
+	<script>
 
-function submitted() {
-	let openness = 200 + Number(document.getElementById('openness1').value) - Number(document.getElementById('openness2').value) + Number(document.getElementById('openness3').value) - Number(document.getElementById('openness4').value) + Number(document.getElementById('openness5').value);
-	let conscientiousness = 200 + Number(document.getElementById('conscientiousness1').value) - Number(document.getElementById('conscientiousness2').value) - Number(document.getElementById('conscientiousness3').value) + Number(document.getElementById('conscientiousness4').value) + Number(document.getElementById('conscientiousness5').value);
-	let extraversion = 200 + Number(document.getElementById('extraversion1').value) + Number(document.getElementById('extraversion2').value) + Number(document.getElementById('extraversion3').value) - Number(document.getElementById('extraversion4').value) - Number(document.getElementById('extraversion5').value);
-	let agreeableness = 200 - Number(document.getElementById('agreeableness1').value) + Number(document.getElementById('agreeableness2').value) + Number(document.getElementById('agreeableness3').value) + Number(document.getElementById('agreeableness4').value) - Number(document.getElementById('agreeableness5').value);
-	let neuroticism = 200 + Number(document.getElementById('neuroticism1').value) + Number(document.getElementById('neuroticism2').value) - Number(document.getElementById('neuroticism3').value) + Number(document.getElementById('neuroticism4').value) - Number(document.getElementById('neuroticism5').value);
-	window.location = window.location.toString().substring(0, window.location.length - 20) + "Results.html?o=" + openness + "&c=" + conscientiousness + "&e=" + extraversion + "&a=" + agreeableness + "&n=" + neuroticism;
-}
+		function submitted() {
+			let openness = 200 + Number(document.getElementById('openness1').value) - Number(document.getElementById('openness2').value) + Number(document.getElementById('openness3').value) - Number(document.getElementById('openness4').value) + Number(document.getElementById('openness5').value);
+			let conscientiousness = 200 + Number(document.getElementById('conscientiousness1').value) - Number(document.getElementById('conscientiousness2').value) - Number(document.getElementById('conscientiousness3').value) + Number(document.getElementById('conscientiousness4').value) + Number(document.getElementById('conscientiousness5').value);
+			let extraversion = 200 + Number(document.getElementById('extraversion1').value) + Number(document.getElementById('extraversion2').value) + Number(document.getElementById('extraversion3').value) - Number(document.getElementById('extraversion4').value) - Number(document.getElementById('extraversion5').value);
+			let agreeableness = 200 - Number(document.getElementById('agreeableness1').value) + Number(document.getElementById('agreeableness2').value) + Number(document.getElementById('agreeableness3').value) + Number(document.getElementById('agreeableness4').value) - Number(document.getElementById('agreeableness5').value);
+			let neuroticism = 200 + Number(document.getElementById('neuroticism1').value) + Number(document.getElementById('neuroticism2').value) - Number(document.getElementById('neuroticism3').value) + Number(document.getElementById('neuroticism4').value) - Number(document.getElementById('neuroticism5').value);
+			window.location = window.location.toString().substring(0, window.location.length - 20) + "Results.html?o=" + openness + "&c=" + conscientiousness + "&e=" + extraversion + "&a=" + agreeableness + "&n=" + neuroticism;
+		}
 
-</script>
+		function howWork() {
+			window.location = window.location.toString().substring(0, window.location.length - 20) + "HowDoesItWork.html";
+		}
+	</script>
 </html>

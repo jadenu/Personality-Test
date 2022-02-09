@@ -1,275 +1,275 @@
 <!DOCTYPE html>
 <html>
-<style>
-body {
-	margin: 0px;
-}
-h1 {
-	color: black;
-	text-align: center;
-	font-family: "Times New Roman", Times, serif;
-	text-shadow: 2px 2px #aaaaaa;
-	font-size: 50px;
-}
-h2 {
-	text-align: center;
-	font-size: 20px;
-}
-h3 {
-	font-size: 20px;
-}
-h4 {
-	text-align:center;
-}
-h5 {
-	font-size: 15px;
-}
-#headerDiv {
-	width: 100%;
-	background-color: lightgray;
-	border-bottom: 6px solid darkgray;
-	padding: 10px;
-	margin: 0px;
-}
-#frameDiv {
-	background-color: white;
-	border: 10px solid #368EFF;
-	padding: 20px;
-}
-#absoluteDiv {
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	width: 250px;
-	height: 50px;
-	border: 10px solid #368EFF;
-	padding: 0px;
-	margin: 0px;
-	border-radius:5px;
-}
+	<style>
+		body {
+			margin: 0px;
+		}
+		h1 {
+			color: black;
+			text-align: center;
+			font-family: "Times New Roman", Times, serif;
+			text-shadow: 2px 2px #aaaaaa;
+			font-size: 50px;
+		}
+		h2 {
+			text-align: center;
+			font-size: 20px;
+		}
+		h3 {
+			font-size: 20px;
+		}
+		h4 {
+			text-align:center;
+		}
+		h5 {
+			font-size: 15px;
+		}
+		#headerDiv {
+			width: 100%;
+			background-color: lightgray;
+			border-bottom: 6px solid darkgray;
+			padding: 10px;
+			margin: 0px;
+		}
+		#frameDiv {
+			background-color: white;
+			border: 10px solid #368EFF;
+			padding: 20px;
+		}
+		#absoluteDiv {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			width: 250px;
+			height: 50px;
+			border: 10px solid #368EFF;
+			padding: 0px;
+			margin: 0px;
+			border-radius:5px;
+		}
 
-.button {
-	text-align: center;
-	padding: 20px;
-	font-size: 16px;
-	color: black;
-	cursor: pointer;
-	background-color: #368EFF;
-	opacity: 1;
-	border-radius: 5px;
-	-webkit-transitionL .5s;
-	transition: opacity .5s;
-	width: 300px;
-	font-family: "Times New Roman", Times, serif;
-}
-.button:hover {
-	opacity: 0.7;
-}
-.button span {
-	cursor: pointer;
-	position: relative;
-	display: inline-block;
-	transition: 0.5s;
-}
-.button span:before {
-	content: '\00ab';
-	opacity: 0;
-	top: 0;
-	right: -20px;
-	transition: 0.5s;
-}
-.button:hover span {
-	padding-left: 25px;
-}
-.button:hover span:before {
-	opacity: 1;
-	right: 0;
-}
-.bar {
-	-webkit-appearance: none;
-	appearance: none;
-	fill: #368EFF;
-	background: #D3D3D3;
-	opacity: 0.7;
-	-webkit-transition: .2s;
-	tarnsition: opacity .2s;
-	width: 80%;
-}
-.bar:hover {
-	opacity: 1;
-}
-.bar::-moz-progress-bar {
-	background: #D3D3D3;
-}
-.bar::-moz-progress-value {
-	background: #368EFF;
-}
-.bar::-webkit-progress-bar {
-	background: #D3D3D3;
-}
-.bar::-webkit-progress-value {
-	background: #368EFF;
-}
+		.button {
+			text-align: center;
+			padding: 20px;
+			font-size: 16px;
+			color: black;
+			cursor: pointer;
+			background-color: #368EFF;
+			opacity: 1;
+			border-radius: 5px;
+			-webkit-transitionL .5s;
+			transition: opacity .5s;
+			width: 300px;
+			font-family: "Times New Roman", Times, serif;
+		}
+		.button:hover {
+			opacity: 0.7;
+		}
+		.button span {
+			cursor: pointer;
+			position: relative;
+			display: inline-block;
+			transition: 0.5s;
+		}
+		.button span:before {
+			content: '\00ab';
+			opacity: 0;
+			top: 0;
+			right: -20px;
+			transition: 0.5s;
+		}
+		.button:hover span {
+			padding-left: 25px;
+		}
+		.button:hover span:before {
+			opacity: 1;
+			right: 0;
+		}
+		.bar {
+			-webkit-appearance: none;
+			appearance: none;
+			fill: #368EFF;
+			background: #D3D3D3;
+			opacity: 0.7;
+			-webkit-transition: .2s;
+			tarnsition: opacity .2s;
+			width: 80%;
+		}
+		.bar:hover {
+			opacity: 1;
+		}
+		.bar::-moz-progress-bar {
+			background: #D3D3D3;
+		}
+		.bar::-moz-progress-value {
+			background: #368EFF;
+		}
+		.bar::-webkit-progress-bar {
+			background: #D3D3D3;
+		}
+		.bar::-webkit-progress-value {
+			background: #368EFF;
+		}
 
 
-.tooltip {
-	width: 100%;
-	position: relative;
-	display: inline-block;
-}
-.tooltip .tooltiptext {
-	opacity: 0;
-	width: 50px;
-	background-color: black;
-	color: #fff;
-	text-align: center;
-	border-radius: 6px;
-	padding: 5px 0;
-	position: absolute;
-	top: 120%;
-	left: 50%;
-	margin-left: -25px;
-	transition: opacity .3s;
-	-webkit-transition: .3s;
-}
-.tooltip:hover .tooltiptext {
-	opacity: 1;
-}
+		.tooltip {
+			width: 100%;
+			position: relative;
+			display: inline-block;
+		}
+		.tooltip .tooltiptext {
+			opacity: 0;
+			width: 50px;
+			background-color: black;
+			color: #fff;
+			text-align: center;
+			border-radius: 6px;
+			padding: 5px 0;
+			position: absolute;
+			top: 120%;
+			left: 50%;
+			margin-left: -25px;
+			transition: opacity .3s;
+			-webkit-transition: .3s;
+		}
+		.tooltip:hover .tooltiptext {
+			opacity: 1;
+		}
 
-.table {
-	width: 100%;
-	text-align: center;
-	table-layout: fixed;
-}
-td {
-	width: 20%;
-}
-</style>
-<body>
-<div id="headerDiv">
-<h1> Personality Test! </h1>
-<h4> Below are your results. For each of five categories, you are given a percentage to which you positively align with a given trait. There is also a brief description of what each trait means.</h4>
-</div>
-<div id="absoluteDiv">
-<h2> Made by Jaden and Reed </h2>
-</div>
-<div id="frameDiv">
-<table class="table">
-<tr> <th><h3 id="trait1"></h3></th><th><h3 id="trait2"></h3></th><th><h3 id="trait3"></h3></th><th><h3 id="trait4"></h3></th><th><h3 id="trait5"></h3></th></tr>
-<tr> 
-<td><div class="tooltip"><progress class="bar" id="openBar" value="50" max="100"></progress><span class="tooltiptext" id="openTip"></span></div></td>
-<td><div class="tooltip"><progress class="bar" id="conscBar" value="50" max="100"></progress><span class="tooltiptext" id="conscTip"></span></div></td>
-<td><div class="tooltip"><progress class="bar" id="extraBar" value="50" max="100"></progress><span class="tooltiptext" id="extraTip"></span></div></td>
-<td><div class="tooltip"><progress class="bar" id="agreeBar" value="50" max="100"></progress><span class="tooltiptext" id="agreeTip"></span></div></td>
-<td><div class="tooltip"><progress class="bar" id="neuroBar" value="50" max="100"></progress><span class="tooltiptext" id="neuroTip"></span></div></td>
-</tr>
-</table>
-<h3 id="open"></h3>
-<h5 id="openDesc"></h5>
-<h3 id="consc"></h3>
-<h5 id="conscDesc"></h5>
-<h3 id="extra"></h3>
-<h5 id="extraDesc"></h5>
-<h3 id="agree"></h3>
-<h5 id="agreeDesc"></h5>
-<h3 id="neuro"></h3>
-<h5 id="neuroDesc"></h5>
-<button class="button" onclick="retake()"><span> Take the test again </span></button>
-</div>
-</body>
-<script>
+		.table {
+			width: 100%;
+			text-align: center;
+			table-layout: fixed;
+		}
+		td {
+			width: 20%;
+		}
+	</style>
+	<body>
+		<div id="headerDiv">
+			<h1>Personality Test!</h1>
+			<h4>Below are your results. For each of five categories, you are given a percentage to which you positively align with a given trait. There is also a brief description of what each trait means.</h4>
+		</div>
+		<div id="absoluteDiv">
+			<h2>Made by Jaden and Reed</h2>
+		</div>
+		<div id="frameDiv">
+			<table class="table">
+				<tr><th><h3 id="trait1"/></th><th><h3 id="trait2"/></th><th><h3 id="trait3"/></th><th><h3 id="trait4"/></th><th><h3 id="trait5"/></th></tr>
+				<tr>
+					<td><div class="tooltip"><progress class="bar" id="openBar" value="50" max="100"/><span class="tooltiptext" id="openTip"/></div></td>
+					<td><div class="tooltip"><progress class="bar" id="conscBar" value="50" max="100"/><span class="tooltiptext" id="conscTip"/></div></td>
+					<td><div class="tooltip"><progress class="bar" id="extraBar" value="50" max="100"/><span class="tooltiptext" id="extraTip"/></div></td>
+					<td><div class="tooltip"><progress class="bar" id="agreeBar" value="50" max="100"/><span class="tooltiptext" id="agreeTip"/></div></td>
+					<td><div class="tooltip"><progress class="bar" id="neuroBar" value="50" max="100"/><span class="tooltiptext" id="neuroTip"/></div></td>
+				</tr>
+			</table>
+			<h3 id="open"/>
+			<h5 id="openDesc"/>
+			<h3 id="consc"/>
+			<h5 id="conscDesc"/>
+			<h3 id="extra"/>
+			<h5 id="extraDesc"/>
+			<h3 id="agree"/>
+			<h5 id="agreeDesc"/>
+			<h3 id="neuro"/>
+			<h5 id="neuroDesc"/>
+			<button class="button" onclick="retake()"><span>Take the test again</span></button>
+		</div>
+	</body>
+	<script>
 
-const urlParams = new URLSearchParams(window.location.search);
-const o = urlParams.get('o');
-const c = urlParams.get('c');
-const e = urlParams.get('e');
-const a = urlParams.get('a');
-const n = urlParams.get('n');
+		const urlParams = new URLSearchParams(window.location.search);
+		const o = urlParams.get('o');
+		const c = urlParams.get('c');
+		const e = urlParams.get('e');
+		const a = urlParams.get('a');
+		const n = urlParams.get('n');
 
-setValues();
+		setValues();
 
-function setValues() {
-	if (o < 250){
-		let closedness = (250 - o) / 5.0 + 50.0;
-		document.getElementById("openBar").value = closedness;
-		document.getElementById("trait1").innerHTML = "Closedness";
-		document.getElementById("openTip").innerHTML = closedness + "%";
-		document.getElementById("open").innerHTML = "You are " + closedness + "% closed.";
-		document.getElementById("openDesc").innerHTML = "This means that you are more conforming, and tend to be quite practical. You have narrow interests, and tend not to learn new hobbies. You also may not be as open to new ideas.";
-	} else {
-		let openness = (o - 250) / 5.0 + 50.0;
-		document.getElementById("openBar").value = openness;
-		document.getElementById("trait1").innerHTML = "Openness";
-		document.getElementById("openTip").innerHTML = openness + "%";
-		document.getElementById("open").innerHTML = "You are " + openness + "% open.";
-		document.getElementById("openDesc").innerHTML = "This means that you are independent and tend to be quite imaginative. You have broad interests, and often learn new skills. You are also more open to new ideas.";
-	}
-	if (c < 250){
-		let nonchalance = (250 - c) / 5.0 + 50.0;
-		document.getElementById("conscBar").value = nonchalance;
-		document.getElementById("trait2").innerHTML = "Nonchalance";
-		document.getElementById("conscTip").innerHTML = nonchalance + "%";
-		document.getElementById("consc").innerHTML = "You are " + nonchalance + "% nonchalant.";
-		document.getElementById("conscDesc").innerHTML = "This means that you could be somewhat disorganized. You tend to be somewhat impulsive, and you may be seen by others as undependable or careless.";
-	} else {
-		let conscientiousness = (c - 250) / 5.0 + 50.0;
-		document.getElementById("conscBar").value = conscientiousness;
-		document.getElementById("trait2").innerHTML = "Conscientiousness";
-		document.getElementById("conscTip").innerHTML = conscientiousness + "%";
-		document.getElementById("consc").innerHTML = "You are " + conscientiousness + "% conscientious.";
-		document.getElementById("conscDesc").innerHTML = "This means that you are well-organized. You tend to be disciplined, and you are seen by others as dependable and careful.";
-	}
-	if (e < 250){
-		let introversion = (250 - e) / 5.0 + 50.0;
-		document.getElementById("extraBar").value = introversion;
-		document.getElementById("trait3").innerHTML = "Introversion";
-		document.getElementById("extraTip").innerHTML = introversion + "%";
-		document.getElementById("extra").innerHTML = "You are " + introversion + "% introverted.";
-		document.getElementById("extraDesc").innerHTML = "This menas that you aren't very sociable and are somewhat quiet. In many contexts you are cautious, and you may be seen by others as aloof or reclusive.";
-	} else {
-		let extroversion = (e - 250) / 5.0 + 50.0;
-		document.getElementById("extraBar").value = extroversion;
-		document.getElementById("trait3").innerHTML = "Extroversion";
-		document.getElementById("extraTip").innerHTML = extroversion + "%";
-		document.getElementById("extra").innerHTML = "You are " + extroversion + "% extroverted.";
-		document.getElementById("extraDesc").innerHTML = "This means that you are sociable and talkative. In many contexts you are somewhat adventurous, and you may be seen by others as quite friendly.";
-	}
-	if (a < 250){
-		let disagreeability = (250 - a) / 5.0 + 50.0;
-		document.getElementById("agreeBar").value = disagreeability;
-		document.getElementById("trait4").innerHTML = "Disagreeability";
-		document.getElementById("agreeTip").innerHTML = disagreeability + "%";
-		document.getElementById("agree").innerHTML = "You are " + disagreeability + "% disagreeable.";
-		document.getElementById("agreeDesc").innerHTML = "This means that you are somewhat irritable and argumentative. You may come across as rude sometimes, and you probably have a knack for arguing.";
-	} else {
-		let agreeableness = (a - 250) / 5.0 + 50.0;
-		document.getElementById("agreeBar").value = agreeableness;
-		document.getElementById("trait4").innerHTML = "Agreeableness";
-		document.getElementById("agreeTip").innerHTML = agreeableness + "%";
-		document.getElementById("agree").innerHTML = "You are " + agreeableness + "% agreeable.";
-		document.getElementById("agreeDesc").innerHTML = "This means that you are independent and tend to be quite imaginative. You have broad interests, and often learn new skills. You are also more open to new ideas.";
-	}
-	if (n < 250){
-		let balance = (250 - n) / 5.0 + 50.0;
-		document.getElementById("neuroBar").value = balance;
-		document.getElementById("trait5").innerHTML = "Balance";
-		document.getElementById("neuroTip").innerHTML = balance + "%";
-		document.getElementById("neuro").innerHTML = "You are " + balance + "% balanced.";
-		document.getElementById("neuroDesc").innerHTML = "This means that you are sympathetic and polite. In general, you will be fairly good-natured and soft-hearted, and you sympathize well with others.";
-	} else {
-		let neuroticism = (n - 250) / 5.0 + 50.0;
-		document.getElementById("neuroBar").value = neuroticism;
-		document.getElementById("trait5").innerHTML = "Neuroticism";
-		document.getElementById("neuroTip").innerHTML = neuroticism + "%";
-		document.getElementById("neuro").innerHTML = "You are " + neuroticism + "% neurotic.";
-		document.getElementById("neuroDesc").innerHTML = "This means that you are somewhat emotional. You may feel insecure sometimes, and get nervous easily. You often pity yourself and are not satisfied with who you are.";
-	}
-}
+		function setValues() {
+			if (o < 250){
+				let closedness=(250 - o) 5.0 + 50.0;
+				document.getElementById("openBar").value=closedness;
+				document.getElementById("trait1").innerHTML="Closedness" ;
+				document.getElementById("openTip").innerHTML=closedness +"%" ;
+				document.getElementById("open").innerHTML="You are " + closedness +"% closed." ;
+				document.getElementById("openDesc").innerHTML="This means that you are more conforming, and tend to be quite practical. You have narrow interests, and tend not to learn new hobbies. You also may not be as open to new ideas." ;
+			} else {
+				let openness=(o - 250) 5.0 + 50.0;
+				document.getElementById("openBar").value=openness;
+				document.getElementById("trait1").innerHTML="Openness" ;
+				document.getElementById("openTip").innerHTML=openness +"%" ;
+				document.getElementById("open").innerHTML="You are " + openness +"% open." ;
+				document.getElementById("openDesc").innerHTML="This means that you are independent and tend to be quite imaginative. You have broad interests, and often learn new skills. You are also more open to new ideas." ;
+			}
+			if (c< 250){
+				let nonchalance=(250 - c) 5.0 + 50.0;
+				document.getElementById("conscBar").value=nonchalance;
+				document.getElementById("trait2").innerHTML="Nonchalance" ;
+				document.getElementById("conscTip").innerHTML=nonchalance +"%" ;
+				document.getElementById("consc").innerHTML="You are " + nonchalance +"% nonchalant." ;
+				document.getElementById("conscDesc").innerHTML="This means that you could be somewhat disorganized. You tend to be somewhat impulsive, and you may be seen by others as undependable or careless." ;
+			} else {
+				let conscientiousness=(c - 250) 5.0 + 50.0;
+				document.getElementById("conscBar").value=conscientiousness;
+				document.getElementById("trait2").innerHTML="Conscientiousness" ;
+				document.getElementById("conscTip").innerHTML=conscientiousness +"%" ;
+				document.getElementById("consc").innerHTML="You are " + conscientiousness +"% conscientious." ;
+				document.getElementById("conscDesc").innerHTML="This means that you are well-organized. You tend to be disciplined, and you are seen by others as dependable and careful." ;
+			}
+			if (e< 250){
+				let introversion=(250 - e) 5.0 + 50.0;
+				document.getElementById("extraBar").value=introversion;
+				document.getElementById("trait3").innerHTML="Introversion" ;
+				document.getElementById("extraTip").innerHTML=introversion +"%" ;
+				document.getElementById("extra").innerHTML="You are " + introversion +"% introverted." ;
+				document.getElementById("extraDesc").innerHTML="This menas that you aren't very sociable and are somewhat quiet. In many contexts you are cautious, and you may be seen by others as aloof or reclusive." ;
+			} else {
+				let extroversion=(e - 250) 5.0 + 50.0;
+				document.getElementById("extraBar").value=extroversion;
+				document.getElementById("trait3").innerHTML="Extroversion" ;
+				document.getElementById("extraTip").innerHTML=extroversion +"%" ;
+				document.getElementById("extra").innerHTML="You are " + extroversion +"% extroverted." ;
+				document.getElementById("extraDesc").innerHTML="This means that you are sociable and talkative. In many contexts you are somewhat adventurous, and you may be seen by others as quite friendly." ;
+			}
+			if (a< 250){
+				let disagreeability=(250 - a) 5.0 + 50.0;
+				document.getElementById("agreeBar").value=disagreeability;
+				document.getElementById("trait4").innerHTML="Disagreeability" ;
+				document.getElementById("agreeTip").innerHTML=disagreeability +"%" ;
+				document.getElementById("agree").innerHTML="You are " + disagreeability +"% disagreeable." ;
+				document.getElementById("agreeDesc").innerHTML="This means that you are somewhat irritable and argumentative. You may come across as rude sometimes, and you probably have a knack for arguing." ;
+			} else {
+				let agreeableness=(a - 250) 5.0 + 50.0;
+				document.getElementById("agreeBar").value=agreeableness;
+				document.getElementById("trait4").innerHTML="Agreeableness" ;
+				document.getElementById("agreeTip").innerHTML=agreeableness +"%" ;
+				document.getElementById("agree").innerHTML="You are " + agreeableness +"% agreeable." ;
+				document.getElementById("agreeDesc").innerHTML="This means that you are independent and tend to be quite imaginative. You have broad interests, and often learn new skills. You are also more open to new ideas." ;
+			}
+			if (n< 250){
+				let balance=(250 - n) 5.0 + 50.0;
+				document.getElementById("neuroBar").value=balance;
+				document.getElementById("trait5").innerHTML="Balance" ;
+				document.getElementById("neuroTip").innerHTML=balance +"%" ;
+				document.getElementById("neuro").innerHTML="You are " + balance +"% balanced." ;
+				document.getElementById("neuroDesc").innerHTML="This means that you are sympathetic and polite. In general, you will be fairly good-natured and soft-hearted, and you sympathize well with others." ;
+			} else {
+				let neuroticism=(n - 250) 5.0 + 50.0;
+				document.getElementById("neuroBar").value=neuroticism;
+				document.getElementById("trait5").innerHTML="Neuroticism" ;
+				document.getElementById("neuroTip").innerHTML=neuroticism +"%" ;
+				document.getElementById("neuro").innerHTML="You are " + neuroticism +"% neurotic." ;
+				document.getElementById("neuroDesc").innerHTML="This means that you are somewhat emotional. You may feel insecure sometimes, and get nervous easily. You often pity yourself and are not satisfied with who you are." ;
+			}
+		}
 
-function retake() {
-	const remove = "Results.html?o=" + o + "&c=" + c + "&e=" + e + "&a=" + a + "&n=" + n
-	window.location = window.location.toString().substring(0, window.location.length - remove.length) + "PersonalityTest.html";
-}
+		function retake() {
+			const remove="Results.html?o=" + o +"&c=" + c +"&e=" + e +"&a=" + a +"&n=" + n
+			window.location=window.location.toString().substring(0, window.location.length - remove.length) +"PersonalityTest.html" ;
+		}
 
-</script>
+	</script>
 </html>

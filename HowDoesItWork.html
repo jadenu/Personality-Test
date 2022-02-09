@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<style>
+		body {
+			margin: 0px;
+		}
+		h1 {
+			color: black;
+			text-align: center;
+			font-family: "Times New Roman", Times, serif;
+			text-shadow: 2px 2px #aaaaaa;
+			font-size: 50px;
+		}
+		h2 {
+			text-align: center;
+			font-size: 20px;
+		}
+		h3 {
+			font-size: 40px;
+		}
+		h4 {
+			font-size: 40px;
+			text-align:center;
+		}
+		h5 {
+			font-size: 20px;
+		}
+		#headerDiv {
+			width: 100%;
+			background-color: lightgray;
+			border-bottom: 6px solid darkgray;
+			padding: 10px;
+			margin: 0px;
+		}
+		#frameDiv {
+			background-color: white;
+			border: 10px solid #368EFF;
+			padding: 20px;
+		}
+		#absoluteDiv {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			width: 250px;
+			height: 50px;
+			border: 10px solid #368EFF;
+			padding: 0px;
+			margin: 0px;
+			border-radius:5px;
+		}
+		#backDiv {
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			padding: 0px;
+			margin: 0px;
+			height: 50px;
+		}
+		.table {
+			width: 100%;
+			text-align: center;
+			table-layout: fixed;
+		}
+		td {
+			width: 33.3%;
+		}
+		ul {
+			text-align: center;
+			list-style-position: inside;
+		}
+		
+		.button {
+			text-align: center;
+			padding: 20px;
+			font-size: 16px;
+			color: black;
+			cursor: pointer;
+			background-color: #368EFF;
+			opacity: 1;
+			border-radius: 5px;
+			-webkit-transition: .5s;
+			transition: opacity .5s;
+			width: 220px;
+		}
+		.button:hover {
+			opacity: 0.7;
+		}
+		.button span {
+			cursor: pointer;
+			position: relative;
+			display: inline-block;
+			transition: .5s;
+			-webkit-transition: .5s;
+		}
+		.button span:before {
+			content: '\00ab';
+			opacity: 0;
+			top: 0;
+			left: -20px;
+			transition: .5s;
+			-webkit-transition: .5s;
+		}
+		.button:hover span {
+			padding-left: 25px;
+		}
+		.button:hover span:before {
+			opacity: 1;
+			right: 0;
+		}
+	</style>
+	<body>
+		<div id="headerDiv">
+			<h1>Personality Test!</h1>
+			<h4>How it works</h4>
+		</div>
+		<div id="backDiv">
+			<button class="button" onclick="back()" type="submit">
+				<span> Back to test </span>
+			</button>
+		</div>
+		<div id="absoluteDiv">
+			<h2>Made by Jaden and Reed</h2>
+		</div>
+		<div id="frameDiv">
+			<table class="table">
+				<tr><th><h3>The Questions</h3></th><th><h3>The Results</h3></th><th><h3>The Website</h3></th></tr>
+				<tr>
+					<td><ul>
+						<li><h5>Each question is scored between 0 and 100 depending on how far the bar is dragged</h5></li>
+						<li><h5>Questions fall into categories corresponding to the traits shown on the results page</h5></li>
+						<li><h5>Each question will contribute either positively or negatively to its corresponding trait</h5></li>
+						<li/>
+					</ul></td>
+					<td><ul>
+						<li><h5>The results from the questions are tallied and passed along to the results page</h5></li>
+						<li><h5>In total, each of the 5 traits will have a score between 0 and 500</h5></li>
+						<li><h5>If the score for any given trait is equal to or above 250, the positive of that trait is present, otherwise the negative is</h5></li>
+						<li><h5>Depending on how far the result is from 250, a higher or lower percentage score is given</h5></li>
+						<li/>
+					</ul></td>
+					<td><ul>
+						<li><h5>This website is made using raw HTML, CSS, and JavaScript</h5></li>
+						<li><h5>The code can be found <a href=https://github.com/jadenu/Personality-Test>here</a>.</h5></li>
+						<li><h5>A few notable features are the animated buttons and the custom progress bars for showing trait percentages with tooltips</h5></li>
+						<li><h5>If my data-logging websocket works, this will be a comment about it</h5></li>
+						<li/>
+					</ul></td>
+				</tr>
+			</table>
+		</div>
+	</body>
+	
+	<script>
+		function back() {
+			window.location = window.location.toString().substring(0, window.location.length - 18) + "PersonalityTest.html";
+		}
+	</script>
+</html>
