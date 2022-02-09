@@ -189,15 +189,16 @@
 		setValues();
 
 		function setValues() {
+			console.log(o + " " + c + " " + e + " " + a + " " + n);
 			if (o < 250){
-				let closedness=(250 - o) 5.0 + 50.0;
+				let closedness=(250 - o) / 5.0 + 50.0;
 				document.getElementById("openBar").value=closedness;
 				document.getElementById("trait1").innerHTML="Closedness" ;
 				document.getElementById("openTip").innerHTML=closedness +"%" ;
 				document.getElementById("open").innerHTML="You are " + closedness +"% closed." ;
 				document.getElementById("openDesc").innerHTML="This means that you are more conforming, and tend to be quite practical. You have narrow interests, and tend not to learn new hobbies. You also may not be as open to new ideas." ;
 			} else {
-				let openness=(o - 250) 5.0 + 50.0;
+				let openness=(o - 250) / 5.0 + 50.0;
 				document.getElementById("openBar").value=openness;
 				document.getElementById("trait1").innerHTML="Openness" ;
 				document.getElementById("openTip").innerHTML=openness +"%" ;
@@ -205,14 +206,14 @@
 				document.getElementById("openDesc").innerHTML="This means that you are independent and tend to be quite imaginative. You have broad interests, and often learn new skills. You are also more open to new ideas." ;
 			}
 			if (c< 250){
-				let nonchalance=(250 - c) 5.0 + 50.0;
+				let nonchalance=(250 - c) / 5.0 + 50.0;
 				document.getElementById("conscBar").value=nonchalance;
 				document.getElementById("trait2").innerHTML="Nonchalance" ;
 				document.getElementById("conscTip").innerHTML=nonchalance +"%" ;
 				document.getElementById("consc").innerHTML="You are " + nonchalance +"% nonchalant." ;
 				document.getElementById("conscDesc").innerHTML="This means that you could be somewhat disorganized. You tend to be somewhat impulsive, and you may be seen by others as undependable or careless." ;
 			} else {
-				let conscientiousness=(c - 250) 5.0 + 50.0;
+				let conscientiousness=(c - 250) / 5.0 + 50.0;
 				document.getElementById("conscBar").value=conscientiousness;
 				document.getElementById("trait2").innerHTML="Conscientiousness" ;
 				document.getElementById("conscTip").innerHTML=conscientiousness +"%" ;
@@ -220,14 +221,14 @@
 				document.getElementById("conscDesc").innerHTML="This means that you are well-organized. You tend to be disciplined, and you are seen by others as dependable and careful." ;
 			}
 			if (e< 250){
-				let introversion=(250 - e) 5.0 + 50.0;
+				let introversion=(250 - e) / 5.0 + 50.0;
 				document.getElementById("extraBar").value=introversion;
 				document.getElementById("trait3").innerHTML="Introversion" ;
 				document.getElementById("extraTip").innerHTML=introversion +"%" ;
 				document.getElementById("extra").innerHTML="You are " + introversion +"% introverted." ;
 				document.getElementById("extraDesc").innerHTML="This menas that you aren't very sociable and are somewhat quiet. In many contexts you are cautious, and you may be seen by others as aloof or reclusive." ;
 			} else {
-				let extroversion=(e - 250) 5.0 + 50.0;
+				let extroversion=(e - 250) / 5.0 + 50.0;
 				document.getElementById("extraBar").value=extroversion;
 				document.getElementById("trait3").innerHTML="Extroversion" ;
 				document.getElementById("extraTip").innerHTML=extroversion +"%" ;
@@ -235,14 +236,14 @@
 				document.getElementById("extraDesc").innerHTML="This means that you are sociable and talkative. In many contexts you are somewhat adventurous, and you may be seen by others as quite friendly." ;
 			}
 			if (a< 250){
-				let disagreeability=(250 - a) 5.0 + 50.0;
+				let disagreeability=(250 - a) / 5.0 + 50.0;
 				document.getElementById("agreeBar").value=disagreeability;
 				document.getElementById("trait4").innerHTML="Disagreeability" ;
 				document.getElementById("agreeTip").innerHTML=disagreeability +"%" ;
 				document.getElementById("agree").innerHTML="You are " + disagreeability +"% disagreeable." ;
 				document.getElementById("agreeDesc").innerHTML="This means that you are somewhat irritable and argumentative. You may come across as rude sometimes, and you probably have a knack for arguing." ;
 			} else {
-				let agreeableness=(a - 250) 5.0 + 50.0;
+				let agreeableness=(a - 250) / 5.0 + 50.0;
 				document.getElementById("agreeBar").value=agreeableness;
 				document.getElementById("trait4").innerHTML="Agreeableness" ;
 				document.getElementById("agreeTip").innerHTML=agreeableness +"%" ;
@@ -250,14 +251,14 @@
 				document.getElementById("agreeDesc").innerHTML="This means that you are independent and tend to be quite imaginative. You have broad interests, and often learn new skills. You are also more open to new ideas." ;
 			}
 			if (n< 250){
-				let balance=(250 - n) 5.0 + 50.0;
+				let balance=(250 - n) / 5.0 + 50.0;
 				document.getElementById("neuroBar").value=balance;
 				document.getElementById("trait5").innerHTML="Balance" ;
 				document.getElementById("neuroTip").innerHTML=balance +"%" ;
 				document.getElementById("neuro").innerHTML="You are " + balance +"% balanced." ;
 				document.getElementById("neuroDesc").innerHTML="This means that you are sympathetic and polite. In general, you will be fairly good-natured and soft-hearted, and you sympathize well with others." ;
 			} else {
-				let neuroticism=(n - 250) 5.0 + 50.0;
+				let neuroticism=(n - 250) / 5.0 + 50.0;
 				document.getElementById("neuroBar").value=neuroticism;
 				document.getElementById("trait5").innerHTML="Neuroticism" ;
 				document.getElementById("neuroTip").innerHTML=neuroticism +"%" ;
