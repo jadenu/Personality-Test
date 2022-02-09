@@ -265,23 +265,73 @@
 				<input class="range" type="range" id="neuroticism5" name="How much do you agree?" min="0" max="100" value="50"/>
 				<br/>
 				<br/>
-				<button class="button" onclick="submitted()" type="submit">
+				<button class="button" onclick={this.onFormSubmit} type="submit">
 					<span> Submit </span>
 				</button>
 			</div>
 		</div>
 	</body>
+	<script type="text/javascript" src='https://apis.google.com/js/api.js' async defer crossOrigin="anonymous" onload="this.onload=function(){};" onreadystatechange="if (this.readyState === 'complete') this.onload()"/>
 	<script>
-
-		function submitted() {
-			let openness = 200 + Number(document.getElementById('openness1').value) - Number(document.getElementById('openness2').value) + Number(document.getElementById('openness3').value) - Number(document.getElementById('openness4').value) + Number(document.getElementById('openness5').value);
-			let conscientiousness = 200 + Number(document.getElementById('conscientiousness1').value) - Number(document.getElementById('conscientiousness2').value) - Number(document.getElementById('conscientiousness3').value) + Number(document.getElementById('conscientiousness4').value) + Number(document.getElementById('conscientiousness5').value);
-			let extraversion = 200 + Number(document.getElementById('extraversion1').value) + Number(document.getElementById('extraversion2').value) + Number(document.getElementById('extraversion3').value) - Number(document.getElementById('extraversion4').value) - Number(document.getElementById('extraversion5').value);
-			let agreeableness = 200 - Number(document.getElementById('agreeableness1').value) + Number(document.getElementById('agreeableness2').value) + Number(document.getElementById('agreeableness3').value) + Number(document.getElementById('agreeableness4').value) - Number(document.getElementById('agreeableness5').value);
-			let neuroticism = 200 + Number(document.getElementById('neuroticism1').value) + Number(document.getElementById('neuroticism2').value) - Number(document.getElementById('neuroticism3').value) + Number(document.getElementById('neuroticism4').value) - Number(document.getElementById('neuroticism5').value);
-			window.location = window.location.toString().substring(0, window.location.length - 20) + "Results.html?o=" + openness + "&c=" + conscientiousness + "&e=" + extraversion + "&a=" + agreeableness + "&n=" + neuroticism;
+		import React from 'react';
+	
+		const SPREADSHEET_ID = '15mWsM3DvIfM_PK2i1GSZvhJXTD5sDde3XdCzUHSA9DM';
+		const CLIENT_ID = '189200978530-5l44nff5c2n3okl3ub8ucrq7eu089k7u.apps.googleusercontent.com';
+		const API_KEY = 'AIzaSyBxrQ5yniZxh6MzX8nNro2iP5fi1azD5vY';
+		const SCOPE = 'https://www.googleapis.com/auth/spreadsheets';
+		
+		export default class PersonalityTest extends React.Component {
+			submitted() {
+				let openness = 200 + Number(document.getElementById('openness1').value) - Number(document.getElementById('openness2').value) + Number(document.getElementById('openness3').value) - Number(document.getElementById('openness4').value) + Number(document.getElementById('openness5').value);
+				let conscientiousness = 200 + Number(document.getElementById('conscientiousness1').value) - Number(document.getElementById('conscientiousness2').value) - Number(document.getElementById('conscientiousness3').value) + Number(document.getElementById('conscientiousness4').value) + Number(document.getElementById('conscientiousness5').value);
+				let extraversion = 200 + Number(document.getElementById('extraversion1').value) + Number(document.getElementById('extraversion2').value) + Number(document.getElementById('extraversion3').value) - Number(document.getElementById('extraversion4').value) - Number(document.getElementById('extraversion5').value);
+				let agreeableness = 200 - Number(document.getElementById('agreeableness1').value) + Number(document.getElementById('agreeableness2').value) + Number(document.getElementById('agreeableness3').value) + Number(document.getElementById('agreeableness4').value) - Number(document.getElementById('agreeableness5').value);
+				let neuroticism = 200 + Number(document.getElementById('neuroticism1').value) + Number(document.getElementById('neuroticism2').value) - Number(document.getElementById('neuroticism3').value) + Number(document.getElementById('neuroticism4').value) - Number(document.getElementById('neuroticism5').value);
+				
+				let results = [openness, conscientiousness, extraversion, agreeableness, neuroticism];
+				
+				const params = {spreadsheetID: SPREADSHEET_ID, range: 'Sheet1', valueInputOption: 'RAW', insertDataOption: 'INSERT_ROWS'};
+				
+				const valueRangeBody = {'majorDimension': 'ROWS', 'values': [results]};
+				
+				let request = gapi.client.sheets.spreadsheets.values.append(params, valueRangeBody);
+				request.then(function (response) {
+					console.log(response.result);
+				}, function (reason) {
+					console.error('error: ' + reason.result.error.message);
+				});
+				
+				//window.location = window.location.toString().substring(0, window.location.length - 20) + "Results.html?o=" + openness + "&c=" + conscientiousness + "&e=" + extraversion + "&a=" + agreeableness + "&n=" + neuroticism;
+			}
+			
+			componentDidMount(){
+				console.log("mounted");
+				this.handleClientLoad();
+			}
+			
+			handleClientLoad =()=> {
+				gapi.load('client:auth2', this.initClient);
+			}
+			
+			initClient =()=> {
+				gapi.client.init({
+						'apiKey': API_KEY,
+						'clientId': CLIENT_ID,
+						'scope': SCOPE,
+						'discoveryDocs': [https://sheets.googleapis.com/$discovery/rest?version=v4'],
+					}).then(()=> {
+						gapi.auth2.getAuthInstance().isSignedIn.listen(this.updateSignInStatus);
+						this.updateSignInStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+				});
+			}
+			
+			constructor(props) {
+				super(props);
+				this.submitted = this.submitted.bind(this);
+			}
 		}
-
+	</script>
+	<script>
 		function howWork() {
 			window.location = window.location.toString().substring(0, window.location.length - 20) + "HowDoesItWork.html";
 		}
