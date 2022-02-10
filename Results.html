@@ -189,6 +189,7 @@
 		const e = urlParams.get('e');
 		const a = urlParams.get('a');
 		const n = urlParams.get('n');
+		const color = urlParams.get('color');
 
 		setValues();
 
@@ -269,6 +270,8 @@
 				document.getElementById("neuro").innerHTML="You are " + neuroticism +"% neurotic." ;
 				document.getElementById("neuroDesc").innerHTML="This means that you are somewhat emotional. You may feel insecure sometimes, and get nervous easily. You often pity yourself and are not satisfied with who you are." ;
 			}
+			
+			document.getElementById("frameDiv").style['border-color'] = color;
 		}
 
 		function retake() {

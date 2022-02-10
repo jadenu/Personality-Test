@@ -269,6 +269,20 @@
 				<input class="range" type="range" id="neuroticism5" name="How much do you agree?" min="0" max="100" value="50"/>
 				<br/>
 				<br/>
+				<hr align="left"/>
+				<h3> What is your favorite color? </h3>
+				<select name="colors" id="color">
+					<option value="red">Red</option>
+					<option value="orange">Orange</option>
+					<option value="yellow">Yellow</option>
+					<option value="green">Green</option>
+					<option value="blue">Blue</option>
+					<option value="purple">Purple</option>
+					<option value="gray">Gray</option>
+					<option value="black">Black</option>
+				</select>
+				<br/>
+				<br/>
 				<button class="button" id="submit" onclick="submitted();" type="submit">
 					<span> Submit </span>
 				</button>
@@ -285,7 +299,9 @@
 			let agreeableness = 200 - Number(document.getElementById('agreeableness1').value) + Number(document.getElementById('agreeableness2').value) + Number(document.getElementById('agreeableness3').value) + Number(document.getElementById('agreeableness4').value) - Number(document.getElementById('agreeableness5').value);
 			let neuroticism = 200 + Number(document.getElementById('neuroticism1').value) + Number(document.getElementById('neuroticism2').value) - Number(document.getElementById('neuroticism3').value) + Number(document.getElementById('neuroticism4').value) - Number(document.getElementById('neuroticism5').value);
 			
-			window.location = window.location.toString().substring(0, window.location.length - 20) + "Results.html?o=" + openness + "&c=" + conscientiousness + "&e=" + extraversion + "&a=" + agreeableness + "&n=" + neuroticism;
+			let color = document.getElementById('color').value;
+			
+			window.location = window.location.toString().substring(0, window.location.length - 20) + "Results.html?o=" + openness + "&c=" + conscientiousness + "&e=" + extraversion + "&a=" + agreeableness + "&n=" + neuroticism + "&color=" + color;
 		}
 		
 		function howWork() {
