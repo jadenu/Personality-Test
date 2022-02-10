@@ -130,7 +130,6 @@
 	<head>
 		<title> Personality Test </title>
 		<link rel="icon" href="icon.png"/>
-		<script src='//script.sheetsu.com'></script>
 	</head>
 	<body>
 		<div id="headerDiv">
@@ -146,11 +145,6 @@
 				<h2> Made by Jaden and Reed </h2>
 			</div>
 			<div id="frameDiv">
-				<h3> First name </h3>
-				<input type="text" id="name"></input>
-				<br/>
-				<br/>
-				<hr align="left"/>
 				<h3> You enjoy meeting new people. </h3>
 				<input class="range" type="range" id="openness1" name="How much do you agree?" min="0" max="100" value="50"/>
 				<br/>
@@ -282,12 +276,8 @@
 		</div>
 	</body>
 	<script>
-	
-		Sheetsu.read("https://sheetsu.com/apis/v1.0su/281b4e160440", {}, successFunc);
 		
 		function submitted() {
-		
-			console.log("fuck why won't you do anything?!?!?!?");
 		
 			let openness = 200 + Number(document.getElementById('openness1').value) - Number(document.getElementById('openness2').value) + Number(document.getElementById('openness3').value) - Number(document.getElementById('openness4').value) + Number(document.getElementById('openness5').value);
 			let conscientiousness = 200 + Number(document.getElementById('conscientiousness1').value) - Number(document.getElementById('conscientiousness2').value) - Number(document.getElementById('conscientiousness3').value) + Number(document.getElementById('conscientiousness4').value) + Number(document.getElementById('conscientiousness5').value);
@@ -295,27 +285,7 @@
 			let agreeableness = 200 - Number(document.getElementById('agreeableness1').value) + Number(document.getElementById('agreeableness2').value) + Number(document.getElementById('agreeableness3').value) + Number(document.getElementById('agreeableness4').value) - Number(document.getElementById('agreeableness5').value);
 			let neuroticism = 200 + Number(document.getElementById('neuroticism1').value) + Number(document.getElementById('neuroticism2').value) - Number(document.getElementById('neuroticism3').value) + Number(document.getElementById('neuroticism4').value) - Number(document.getElementById('neuroticism5').value);
 			
-			let name = document.getElementById('name').value;
-			
-			var data = {
-				Name: name,
-				Openness: openness,
-				Conscientiousness: conscientiousness,
-				Extroversion: extraversion,
-				Agreeableness: agreeableness,
-				Neuroticism: neuroticism
-			};
-			
-			console.log("writing...");
-			
-			Sheetsu.write("https://sheetsu.com/apis/v1.0su/281b4e160440", {}, successFunc);
-			
-			//window.location = window.location.toString().substring(0, window.location.length - 20) + "Results.html?o=" + openness + "&c=" + conscientiousness + "&e=" + extraversion + "&a=" + agreeableness + "&n=" + neuroticism;
-		}
-		
-		function successFunc(data) {
-			console.log("success!");
-			console.log(data);
+			window.location = window.location.toString().substring(0, window.location.length - 20) + "Results.html?o=" + openness + "&c=" + conscientiousness + "&e=" + extraversion + "&a=" + agreeableness + "&n=" + neuroticism;
 		}
 		
 		function howWork() {
